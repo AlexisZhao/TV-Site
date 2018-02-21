@@ -1,0 +1,16 @@
+<div class="row" *ngIf="show">
+    <div class="col-md-6">
+      <img src="https://image.tmdb.org/t/p/w500/{{show.backdrop_path}}" alt="" class="thumbnail">
+
+    </div>
+    <div class="col-md-8">
+      <p>{{show.status}}</p>
+      <p><strong>Last Air Date: </strong>{{show.last_air_date}}</p>
+      <p><strong>Number Of Seasons: </strong>{{show.number_of_seasons}}</p>
+      <p><strong>Number Of Episodes: </strong>{{show.number_of_episodes}}</p>
+      <h3>Overview</h3>
+      <p>
+        {{show.overview}}
+      </p>
+    </div>
+  </div>

@@ -1,0 +1,41 @@
+
+  <div class="jumbotron" >
+      <form name = "searchForm" >
+        <div class="form-group">
+          <div class="input-group" [formGroup]="form">
+            <input type="text" id = "search" class="form-control" formControlName="search" placeholder="Search for TV Shows..."
+            [(ngModel)]="keyWord" (keyup.enter)="search()" >
+            <span class="input-group-btn">
+            <button name="button" class="btn btn-primary" type="button" [disabled]="!form.valid" (click)="search()"  >Search</button>   
+            </span>
+          </div>
+        </div>
+      </form>
+    </div>
+    
+
+    <div *ngIf="searchResults">
+        <h3 class="orange-text">Popular TV Shows</h3>
+        <div class="row is-flex">
+          <div class="col-sm-6 col-md-4 col-lg-2 col-xs-6" *ngFor="let show of searchResults; let i = index;">
+            <div class="thumbnail">
+              <a routerLink="/show-detail/{{show.id}}">
+              <img src="https://image.tmdb.org/t/p/w300/{{show.poster_path}}" *ngIf="show.poster_path">
+              </a>
+              <div class="caption">
+                <h4 class="text-ellipsis">
+                  {{show.name}}
+                </h4>
+                <p><strong>First Air Date: </strong>{{show.first_air_date}}</p>
+                <p>
+                  <a routerLink="/show-detail/{{show.id}}">More Info</a>
+                  <small class="label label-danger pull-right">
+                    {{show.vote_average}}
+                    <i class="glyphicon glyphicon-heart"></i>
+                  </small>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
