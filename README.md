@@ -1,3 +1,5 @@
+The project is finished by using Angular 5.2.4 with the movie database API. It contains front-end: showing information of TV shows, search function and form validation (search input cannot be empty). 
+
 # Tv
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.8.
