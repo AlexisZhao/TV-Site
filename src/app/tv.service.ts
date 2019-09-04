@@ -36,6 +36,15 @@ export class TvService {
       })
   }
 
+  topRated(){
+    var search = new URLSearchParams();
+    search.set('api_key', this.api_key);
+    return this._jsonp.get(' https://api.themoviedb.org/3/tv/top_rated?callback=JSONP_CALLBACK', {search})
+      .map(res => {
+        return res.json();
+      })
+  }
+
   getOnTV(){
     var search = new URLSearchParams();
     search.set('api_key', this.api_key);

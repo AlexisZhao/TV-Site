@@ -10,7 +10,7 @@ export class TopRatedComponent implements OnInit {
   shows: Array<Object>;
 
   constructor(private _tvService: TvService) {
-    this._tvService.getOnTV().subscribe(res => {
+    this._tvService.topRated().subscribe(res => {
       this.shows = res.results;
     });
    }
